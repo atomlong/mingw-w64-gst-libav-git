@@ -20,11 +20,6 @@ pkgver() {
   printf "%s" "$(git describe --long | sed 's/\([^-]*-\)g/r\1/;s/-/./g')"
 }
 
-prepare() {
-  cd $_gitname 
-  NOCONFIGURE=1 ./autogen.sh
-}
-
 _architectures="i686-w64-mingw32 x86_64-w64-mingw32"
 
 build() {
